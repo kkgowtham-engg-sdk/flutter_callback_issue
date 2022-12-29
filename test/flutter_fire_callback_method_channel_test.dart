@@ -1,9 +1,9 @@
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:flutter_fire_callback/flutter_fire_callback_method_channel.dart';
+import 'package:flutter_fire_callback/my_method_channel.dart';
 
 void main() {
-  MethodChannelFlutterFireCallback platform = MethodChannelFlutterFireCallback();
+  MyMethodChannelCallBack platform = MyMethodChannelCallBack();
   const MethodChannel channel = MethodChannel('flutter_fire_callback');
 
   TestWidgetsFlutterBinding.ensureInitialized();

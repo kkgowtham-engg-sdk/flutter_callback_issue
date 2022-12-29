@@ -1,13 +1,13 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 
-import 'flutter_fire_callback_platform_interface.dart';
+import 'my_platform_interface.dart';
 import 'dart:convert';
 
 typedef PushClickCallBack = void Function(Map<String, dynamic> title);
 
-/// An implementation of [FlutterFireCallbackPlatform] that uses method channels.
-class MethodChannelFlutterFireCallback extends FlutterFireCallbackPlatform {
+/// An implementation of [MyPlatformInterface] that uses method channels.
+class MyMethodChannelCallBack extends MyPlatformInterface {
 
   PushClickCallBack? pushClickCallBack;
   MethodChannel? pushCallBackChannel;

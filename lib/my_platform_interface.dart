@@ -1,21 +1,21 @@
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 
-import 'flutter_fire_callback_method_channel.dart';
+import 'my_method_channel.dart';
 
-abstract class FlutterFireCallbackPlatform extends PlatformInterface {
-  /// Constructs a FlutterFireCallbackPlatform.
-  FlutterFireCallbackPlatform() : super(token: _token);
+abstract class MyPlatformInterface extends PlatformInterface {
+  /// Constructs a SamplePlatformInterface.
+  MyPlatformInterface() : super(token: _token);
 
   static final Object _token = Object();
 
-  static FlutterFireCallbackPlatform _instance = MethodChannelFlutterFireCallback();
+  static MyPlatformInterface _instance = MyMethodChannelCallBack();
 
-  /// The default instance of [FlutterFireCallbackPlatform] to use.
+  /// The default instance of [MyPlatformInterface] to use.
   ///
-  /// Defaults to [MethodChannelFlutterFireCallback].
-  static FlutterFireCallbackPlatform get instance => _instance;
+  /// Defaults to [MyMethodChannelCallBack].
+  static MyPlatformInterface get instance => _instance;
 
-  static set instance(FlutterFireCallbackPlatform instance) {
+  static set instance(MyPlatformInterface instance) {
     PlatformInterface.verifyToken(instance, _token);
     _instance = instance;
   }

@@ -5,8 +5,8 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 
 import 'package:flutter/services.dart';
-import 'package:flutter_fire_callback/flutter_fire_callback.dart';
-import 'package:flutter_fire_callback/flutter_fire_callback_platform_interface.dart';
+import 'package:flutter_fire_callback/my_platform_plugin.dart';
+import 'package:flutter_fire_callback/my_platform_interface.dart';
 
 
 void main() async{
@@ -15,9 +15,9 @@ void main() async{
 
   /// On Commenting the below listener, _onPushClick method channel callbacks are working fine
   /// When the below listener is added and push clicked method channel method is called from native android, the callback is not coming flutter method channel call handler
-  FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
+  //FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
 
-  FlutterFireCallbackPlatform.instance
+  MyPlatformInterface.instance
     ..configure()
     ..setPushClickCallBack(_onPushClick);
 
@@ -45,7 +45,7 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   String _platformVersion = 'Unknown';
-  final _flutterFireCallbackPlugin = FlutterFireCallback();
+  final _flutterFireCallbackPlugin = MyPlatformPlugin();
 
   @override
   void initState() {
